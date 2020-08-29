@@ -15,7 +15,7 @@ gem 'amico-db', git: 'git@github.com:rubynetti/amico-db.git'
 For example inside a rails initializer (config/initializers/amico-db.rb).
 
 ```ruby
-Importdb.configure do |config|
+AmicoDb.configure do |config|
   self.ssh_user = "user"
   self.host = "www.example.com"
   self.remote_app_path = "/var/www/yourproject"

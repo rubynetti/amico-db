@@ -1,7 +1,7 @@
 require 'test_helper'
 class DumpCmdTest  < Minitest::Test
   def test_return_mysql_dump_command
-    result = Importdb::DumpCmd.new.call
+    result = AmicoDb::DumpCmd.new.call
     assert_equal "cd /var/www/yourproject; " +
                  "docker-compose exec -T db " +
                  "bash -c " +

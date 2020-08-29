@@ -1,3 +1,3 @@
-module Importdb
+module AmicoDb
   VERSION = "0.1.0"
 end

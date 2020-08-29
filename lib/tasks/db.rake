@@ -13,13 +13,13 @@ namespace :db do
   # esempio: rake db:import_from_staging
   task import_from_staging: :environment do
     Rake::Task['db:dump_and_download'].invoke
-    Rake::Task['db:substitute'].invoke(Importdb.configuration.folder_dump)
+    Rake::Task['db:substitute'].invoke(AmicoDb.configuration.folder_dump)
   end
 
   # esempio: rake db:import_from_sql
   desc 'Dump db di staging'
   task import_from_sql: :environment do
-    Rake::Task['db:substitute'].invoke(Importdb.configuration.folder_dump)
+    Rake::Task['db:substitute'].invoke(AmicoDb.configuration.folder_dump)
   end
 
   desc 'Dump database and import requested dump'
@@ -32,13 +32,13 @@ namespace :db do
 
   desc 'Download from staging sql dump of db'
   task download: :environment do
-    Importdb::Download.new.call
+    AmicoDb::Download.new.call
   end
 
   desc 'Import requested dump'
   task :import, [:dump_path] => :environment do |_task, args|
-    db_name = Importdb.configuration.db_dev_dbname
-    user = Importdb.configuration.db_dev_username
+    db_name = AmicoDb.configuration.db_dev_dbname
+    user = AmicoDb.configuration.db_dev_username
     system("pv #{args.dump_path} | mysql -h db -u #{user} -p #{db_name}")
   end
 
@@ -50,6 +50,6 @@ namespace :db do
 
   desc 'Dump db staging'
   task dump: :environment do
-    Importdb::Dump.new.call
+    AmicoDb::Dump.new.call
   end
 end

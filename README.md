@@ -1,4 +1,4 @@
-# Importdb
+# Amico Db
 
 Import **mysql db from docker container**.
 
@@ -7,7 +7,7 @@ Import **mysql db from docker container**.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'importdb'
+gem 'amico-db'
 ```
 
 ## Configuration

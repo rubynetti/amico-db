@@ -1,11 +1,11 @@
-module Importdb
+module AmicoDb
   class Dump
     attr_accessor :host
     attr_accessor :ssh_user
     attr_accessor :remote_path
 
-    def initialize(host: Importdb.configuration.host,
-                   ssh_user: Importdb.configuration.ssh_user)
+    def initialize(host: AmicoDb.configuration.host,
+                   ssh_user: AmicoDb.configuration.ssh_user)
       self.host = host
       self.ssh_user = ssh_user
     end

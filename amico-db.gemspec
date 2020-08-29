@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "importdb/version"
+require "amico-db/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "Amico-Db"
-  spec.version       = Importdb::VERSION
+  spec.version       = AmicoDb::VERSION
   spec.authors       = ["Rubynetti - www.rubynetti.it"]
   spec.email         = ["info@rubynetti.it"]
 

@@ -1,4 +1,4 @@
-module Importdb
+module AmicoDb
   class Configuration
     attr_accessor :ssh_user
     attr_accessor :host

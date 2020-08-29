@@ -1,3 +1,5 @@
+![Ruby](https://github.com/rubynetti/amico-db/workflows/Ruby/badge.svg)
+
 # Amico Db
 
 Import **mysql db from docker container**.

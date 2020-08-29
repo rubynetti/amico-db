@@ -1,6 +1,6 @@
-# Importdb
+# Amico Db
 
-Import mysql db from docker container.
+Import **mysql db from docker container**.
 
 ## Installation
 

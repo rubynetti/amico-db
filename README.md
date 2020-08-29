@@ -7,7 +7,7 @@ Import mysql db from docker container.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'importdb'
+gem 'amico-db', git: 'git://github.com/rubynetti/amico-db.git'
 ```
 
 ## Configuration

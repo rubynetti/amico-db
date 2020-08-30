@@ -13,6 +13,7 @@ module AmicoDb
     end
 
     def call
+      log_before
       Net::SSH.start(host, ssh_user) do |ssh|
         log_start
         ssh.open_channel do |channel|
@@ -36,6 +37,12 @@ module AmicoDb
       channel.on_close { log_end }
     end
 
+    def log_before
+      puts '------------------------------------'.colorize(:red)
+      puts "#{ssh_user}@#{host}".colorize(:red)
+      puts '------------------------------------'.colorize(:red)
+    end
+
     def log_start
       puts '------------------------------------'.colorize(:red)
       puts '--- RUBYNETTI DUMP POWER -----------'.colorize(:red)
@@ -46,7 +53,7 @@ module AmicoDb
 
     def log_end
       puts '--------------------------------------'.colorize(:red)
-      puts 'Ciao Rubynetti, io chiudo connessione.'.colorize(:green)
+      puts 'Hi Rubynetti, close connection.'.colorize(:green)
       puts '--------------------------------------'.colorize(:red)
     end
   end

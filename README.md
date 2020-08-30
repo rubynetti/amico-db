@@ -4,6 +4,18 @@
 
 Import **mysql db from docker container**.
 
+## Requirements
+
+### Docker container
+To use this tool you need a docker container on the server with your db.
+
+### Pipeline
+For visualize progress on the cli you need to install pv: https://man7.org/linux/man-pages/man1/pv.1.html.
+
+```bash
+apt-get install -y pv
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:

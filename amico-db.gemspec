@@ -37,6 +37,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "net-ssh", ">= 6.1.0"
+  spec.add_dependency "colorize"
   spec.add_development_dependency "bundler", "~> 1.17"
   spec.add_development_dependency "rake", ">= 12.3.3"
   spec.add_development_dependency "minitest", "~> 5.0"

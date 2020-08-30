@@ -1,3 +1,5 @@
+require 'colorize'
+require 'net/ssh'
 module AmicoDb
   class Dump
     attr_accessor :host
@@ -12,7 +14,10 @@ module AmicoDb
 
     def call
       Net::SSH.start(host, ssh_user) do |ssh|
-        ssh.open_channel { |channel| execute_stuff(channel) }
+        log_start
+        ssh.open_channel do |channel|
+          execute_stuff(channel)
+        end
         ssh.loop
       end
     end
@@ -20,7 +25,6 @@ module AmicoDb
     private
 
     def execute_stuff(channel)
-      log_start
       channel.request_pty
       commands = DumpCmd.new.call
       channel.exec(commands) do |ch|
@@ -36,7 +40,7 @@ module AmicoDb
       puts '------------------------------------'.colorize(:red)
       puts '--- RUBYNETTI DUMP POWER -----------'.colorize(:red)
       puts '------------------------------------'.colorize(:red)
-      puts 'Connesso al server'.colorize(:blue)
+      puts 'Connected to server'.colorize(:blue)
       puts '------------------------------------'.colorize(:red)
     end
 

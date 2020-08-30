@@ -18,15 +18,15 @@ For example inside a rails initializer (config/initializers/amico-db.rb).
 
 ```ruby
 AmicoDb.configure do |config|
-  self.ssh_user = "user"
-  self.host = "www.example.com"
-  self.remote_app_path = "/var/www/yourproject"
-  self.folder_dump = "/db.sql"
-  self.local_path = './dumps/db.sql'
-  self.db_name = 'dbname'
-  self.db_user = 'dbusername'
-  self.db_dev_dbname = 'dbname'
-  self.db_dev_username = 'dbdevname'
+  config.ssh_user = "user"
+  config.host = "www.example.com"
+  config.remote_app_path = "/var/www/yourproject"
+  config.folder_dump = "/db.sql"
+  config.local_path = './dumps/db.sql'
+  config.db_name = 'dbname'
+  config.db_user = 'dbusername'
+  config.db_dev_dbname = 'dbname'
+  config.db_dev_username = 'dbdevname'
 end
 ```
 

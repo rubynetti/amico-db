@@ -6,8 +6,6 @@ require 'amico-db/dump_cmd'
 require 'amico-db/railtie' if defined?(Rails::Railtie)
 
 module AmicoDb
-  class Error < StandardError; end
-
   def self.configuration
     @configuration ||= AmicoDb::Configuration.new
   end

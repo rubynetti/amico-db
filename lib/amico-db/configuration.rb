@@ -11,10 +11,10 @@ module AmicoDb
     attr_accessor :db_dev_username
 
     def initialize
-      self.ssh_user = "user"
-      self.host = "www.example.com"
-      self.remote_app_path = "/var/www/yourproject"
-      self.folder_dump = "/db.sql"
+      self.ssh_user = 'user'
+      self.host = 'www.example.com'
+      self.remote_app_path = '/var/www/yourproject'
+      self.folder_dump = '/db.sql'
       self.local_path = './dumps/db.sql'
       self.db_name = 'dbname'
       self.db_user = 'dbusername'

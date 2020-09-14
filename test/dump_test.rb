@@ -8,7 +8,7 @@ class DumpTest  < Minitest::Test
     # Thanks to this article:
     # https://mixandgo.com/learn/how-to-test-a-function-that-yields-a-block-with-minitest-and-rspec
     Net::SSH.stub(:start, {}, mock) do
-      result = AmicoDb::Dump.new.call
+      AmicoDb::Dump.new.call
     end
   end
 end

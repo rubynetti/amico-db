@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  gem:
+     build: .
+     volumes:
+       - .:/app
+       - bundle_cache:/usr/local/bundle
+     command: bundle exec rake test
+volumes:
+  bundle_cache:

@@ -23,12 +23,13 @@ RUN apt-get update -qq && \
     apt-get install nodejs
 
 
-# Installa yarn
+# Install yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
     apt-get update && apt-get install yarn && apt-get -y install cron && apt-get -y install vim
 
-**RUN apt-get update && apt-get install -y pv**
+# Install PV
+RUN apt-get update && apt-get install -y pv
 
 WORKDIR /app
 

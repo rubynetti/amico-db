@@ -70,10 +70,11 @@ services:
 
 ## Usage
 
-- rake db:dump
-- rake db:import_from_staging
-- rake db:import_from_sql (importa sql da dumps/db-staging.sql)
-
+```bash
+rake db:dump
+rake db:import_from_staging
+rake db:import_from_sql (importa sql da dumps/db-staging.sql)
+```
 
 ## For development of this gem with Docker
 

@@ -21,7 +21,7 @@ apt-get install -y pv
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'amico-db', git: 'git@github.com:rubynetti/amico-db.git'
+gem 'amico-db', git: 'https://github.com/rubynetti/amico-db.git'
 ```
 
 ## Configuration

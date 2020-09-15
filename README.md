@@ -44,8 +44,10 @@ end
 
 ## Usage
 
-- rake db:import_from_staging
-- rake db:import_from_sql (importa sql da dumps/db-staging.sql)
+```
+rake db:import_from_staging
+rake db:import_from_sql (importa sql da dumps/db-staging.sql)
+```
 
 
 ## For development of this gem with Docker

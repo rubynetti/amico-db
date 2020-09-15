@@ -84,13 +84,15 @@ services:
 
 ## Docker Production Configuration (docker-compose.production.yml)
 
-Database service need MYSQL_ROOT_PASSWORD
+Database service need MYSQL_ROOT_PASSWORD and share dumps folder.
 
 ```yaml
 services:
   db:
     environment:
       - MYSQL_ROOT_PASSWORD=$DB_PASSWORD
+    volumes:
+      - ./dumps:/dumps
 ```
 
 ## Usage

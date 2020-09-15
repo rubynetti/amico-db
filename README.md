@@ -42,8 +42,35 @@ AmicoDb.configure do |config|
 end
 ```
 
+## Docker Dev Configuration (docker-compose.development.yml)
+
+Your dev configuration need to copy ssh folder inside.
+Example:
+
+```yaml
+services:
+  web:
+    build: .
+    command: ['rails', 'server', '-b', '0']
+    volumes:
+      - .:/app
+      - ~/.ssh:/home/rails/.ssh
+```
+
+## Docker Production Configuration (docker-compose.production.yml)
+
+Database service need MYSQL_ROOT_PASSWORD
+
+```yaml
+services:
+  db:
+    environment:
+      - MYSQL_ROOT_PASSWORD=$DB_PASSWORD
+```
+
 ## Usage
 
+- rake db:dump
 - rake db:import_from_staging
 - rake db:import_from_sql (importa sql da dumps/db-staging.sql)
 

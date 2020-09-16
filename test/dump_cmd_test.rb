@@ -7,7 +7,7 @@ class DumpCmdTest  < Minitest::Test
                  "bash -c " +
                  "'mysqldump -u dbusername " +
                  "--ignore-table=dbname.ar_internal_metadata " +
-                 "--no-create-db -p$MYSQL_ROOT_PASSWORD dbname > /db.sql'",
+                 "--no-create-db -p$MYSQL_ROOT_PASSWORD dbname > /dumps/db.sql'",
                  result
   end
 end

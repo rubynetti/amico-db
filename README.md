@@ -31,17 +31,22 @@ gem 'amico-db', git: 'https://github.com/rubynetti/amico-db.git'
 For example inside a rails initializer (config/initializers/amico-db.rb).
 
 ```ruby
+dev = Rails.configuration.database_configuration["production"]
+production = Rails.configuration.database_configuration["production"]
+
 AmicoDb.configure do |config|
-  config.ssh_user = "user"
-  config.host = "www.example.com"
-  config.remote_app_path = "/var/www/yourproject"
-  config.folder_dump = "/db.sql"
+  config.ssh_user = "root"
+  config.host = "46.101.158.6"
+  config.remote_app_path = "/var/www/significatocanzone"
+  config.folder_dump = "/dumps/db.sql"
   config.local_path = './dumps/db.sql'
-  config.db_name = 'dbname'
-  config.db_user = 'dbusername'
-  config.db_dev_dbname = 'dbname'
-  config.db_dev_username = 'dbdevname'
+
+  config.db_name = production["database"]
+  config.db_user = production["username"]
+  config.db_dev_dbname = dev['database']
+  config.db_dev_username = dev['username']
 end
+
 ```
 
 ## Docker Dev Configuration (docker-compose.development.yml)

@@ -35,14 +35,14 @@ dev = Rails.configuration.database_configuration["production"]
 production = Rails.configuration.database_configuration["production"]
 
 AmicoDb.configure do |config|
-  config.ssh_user = "root"
-  config.host = "your_host"
-  config.remote_app_path = "/var/www/significatocanzone"
-  config.folder_dump = "/dumps/db.sql"
+  config.ssh_user = 'root'
+  config.host = 'your_host'
+  config.remote_app_path = '/var/www/yourproject'
+  config.folder_dump = '/dumps/db.sql'
   config.local_path = './dumps/db.sql'
 
-  config.db_name = production["database"]
-  config.db_user = production["username"]
+  config.db_name = production['database']
+  config.db_user = production['username']
   config.db_dev_dbname = dev['database']
   config.db_dev_username = dev['username']
 end

@@ -28,6 +28,7 @@ module AmicoDb
     private
 
     def generate_cmd
+      FileUtils.mkdir_p local_path
       "scp #{user}@#{host}:#{remote_path} #{local_path}"
     end
 

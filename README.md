@@ -36,7 +36,7 @@ production = Rails.configuration.database_configuration["production"]
 
 AmicoDb.configure do |config|
   config.ssh_user = "root"
-  config.host = "46.101.158.6"
+  config.host = "your_host"
   config.remote_app_path = "/var/www/significatocanzone"
   config.folder_dump = "/dumps/db.sql"
   config.local_path = './dumps/db.sql'

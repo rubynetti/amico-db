@@ -4,6 +4,7 @@ module AmicoDb
     attr_accessor :host
     attr_accessor :remote_path
     attr_accessor :local_path
+    attr_accessor :cmd
 
     def initialize(user: AmicoDb.configuration.ssh_user,
                    host: AmicoDb.configuration.host,
@@ -13,6 +14,7 @@ module AmicoDb
       self.host = host
       self.remote_path = remote_path
       self.local_path = local_path
+      self.cmd = generate_cmd
     end
 
     def call
@@ -21,8 +23,9 @@ module AmicoDb
 
     private
 
-    def cmd
+    def generate_cmd
       "scp #{user}@#{host}:#{remote_path} #{local_path}"
     end
+
   end
 end

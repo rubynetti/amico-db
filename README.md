@@ -15,6 +15,7 @@ For visualize progress on the cli you need to install pv: https://man7.org/linux
 ```bash
 # Install PV in your Dockerfile
 RUN apt-get update && apt-get install -y pv
+RUN apt-get update && apt-get install -y mariadb-client
 
 ```
 

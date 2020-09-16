@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    amico-db (0.1.0)
+    amico-db (0.1.3)
       colorize
       net-ssh (>= 6.1.0)
 

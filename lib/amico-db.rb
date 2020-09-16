@@ -1,5 +1,6 @@
 require 'amico-db/configuration'
 require 'amico-db/version'
+require 'amico-db/download_tools/create_dir_if_not_exist'
 require 'amico-db/download'
 require 'amico-db/dump'
 require 'amico-db/dump_cmd'

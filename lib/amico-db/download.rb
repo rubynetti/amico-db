@@ -20,16 +20,20 @@ module AmicoDb
     end
 
     def call
-      create_dir_if_not_exist
-      puts 'Start download with scp:'.colorize(:red)
-      puts cmd.colorize(:red)
+      prepare
+      log
       system(cmd)
     end
 
     private
 
-    def create_dir_if_not_exist
-      File.mkdir_p(File.dirname(local_path))
+    def prepare
+      CreateDirIfNotExist.new(local_path).call
+    end
+
+    def log
+      puts 'Start download with scp:'.colorize(:red)
+      puts cmd.colorize(:red)
     end
 
     def generate_cmd

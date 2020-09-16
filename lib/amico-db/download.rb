@@ -1,3 +1,5 @@
+require 'colorize'
+
 module AmicoDb
   class Download
     attr_accessor :user
@@ -18,6 +20,8 @@ module AmicoDb
     end
 
     def call
+      puts 'Start download with scp:'.colorize(:red)
+      puts cmd.colorize(:red)
       system(cmd)
     end
 

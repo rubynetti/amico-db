@@ -20,6 +20,7 @@ module AmicoDb
     end
 
     def call
+      create_dir_if_not_exist
       puts 'Start download with scp:'.colorize(:red)
       puts cmd.colorize(:red)
       system(cmd)
@@ -27,8 +28,12 @@ module AmicoDb
 
     private
 
+    def create_dir_if_not_exist
+      File.mkdir_p(File.dirname(local_path))
+    end
+
     def generate_cmd
-      FileUtils.mkdir_p local_path
+
       "scp #{user}@#{host}:#{remote_path} #{local_path}"
     end
 

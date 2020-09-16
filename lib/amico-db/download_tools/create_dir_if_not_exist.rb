@@ -8,7 +8,6 @@ module AmicoDb
 
       def call
         dirname = File.dirname(path)
-        p dirname
         FileUtils.mkdir_p(dirname)
       end
     end

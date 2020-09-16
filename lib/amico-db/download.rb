@@ -20,7 +20,7 @@ module AmicoDb
     end
 
     def call
-      CreateDirIfNotExist.new(local_path).call
+      AmicoDb::DownloadTools::CreateDirIfNotExist.new(local_path).call
       log_cmd
       system(cmd)
     end

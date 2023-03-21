@@ -4,14 +4,14 @@
 
 # Queste azioni rake permettono di importare il db da linea di comando.
 # Esempi di uso:
-# - rake db:import_from_staging
+# - rake db:import_from_remote
 # - rake db:import_from_sql (importa sql da dumps/db-staging.sql)
 
 namespace :db do
 
   desc 'Dump db from staging and copy inside locale'
-  # esempio: rake db:import_from_staging
-  task import_from_staging: :environment do
+  # esempio: rake db:import_from_remote
+  task import_from_remote: :environment do
     Rake::Task['db:dump_and_download'].invoke
     Rake::Task['db:substitute'].invoke(AmicoDb.configuration.folder_dump)
   end

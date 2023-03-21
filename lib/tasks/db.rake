@@ -22,7 +22,7 @@ namespace :db do
     Rake::Task['db:substitute'].invoke(AmicoDb.configuration.folder_dump)
   end
 
-  desc 'Dump database and import requested dump'
+  desc 'Dump database and import requested dump. NEED DUMP PATH as argument'
   task  :substitute, [:dump_path] => :environment do |_task, args|
     Rake::Task['db:drop'].invoke
     Rake::Task['db:create'].invoke

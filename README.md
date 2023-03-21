@@ -81,9 +81,8 @@ services:
 ## Usage
 
 ```bash
-rake db:dump
-rake db:import_from_staging
-rake db:import_from_sql (importa sql da dumps/db-staging.sql)
+rake db:dump_and_download
+rake db:import_from_sql
 ```
 
 ## For development of this gem with Docker
